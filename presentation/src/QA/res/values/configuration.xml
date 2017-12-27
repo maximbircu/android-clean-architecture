@@ -1,0 +1,3 @@
+<resources>
+    <string name="client_api_endpoint">http://test.api.tennismate.co/api/</string>
+</resources>

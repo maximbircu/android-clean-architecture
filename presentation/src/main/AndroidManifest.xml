@@ -3,18 +3,22 @@
     package="com.architecture.clean.android_clean_architecture">
 
     <application
+        android:name="com.architecture.clean.presentation.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.architecture.clean.presentation.MainActivity">
+        <activity
+            android:name="com.architecture.clean.presentation.ui.activities.SplashActivity"
+            android:theme="@style/SplashTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

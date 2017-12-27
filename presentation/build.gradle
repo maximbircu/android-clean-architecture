@@ -4,30 +4,70 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+kapt {
+    generateStubs = true
+}
+
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+
     defaultConfig {
-        applicationId "com.architecture.clean.android_clean_architecture"
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        applicationId "architecture.clean"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        archivesBaseName = rootProject.ext.archivesBaseName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions  'environment'
+
+    productFlavors {
+        // environment flavors
+
+        Live {
+            dimension 'environment'
+        }
+
+        QA {
+            dimension 'environment'
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile project(path: ':data')
+    compile project(path: ':domain')
+
+    def android = rootProject.ext.androidDependences
+    def libraries = rootProject.ext.librariesDependeces
+    def test = rootProject.ext.testingDependeces
+
+    //android
+    implementation android.kotlin
+    implementation android.kotlinReflect
+    implementation android.appCompat
+    implementation android.constraintLayout
+    implementation android.picasso
+    implementation android.googlePlayServices
+
+    //libraries
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.dagger
+    kapt libraries.daggerCompiler
+
+    //test
+    testImplementation test.junit
+    androidTestImplementation test.espressoCore
+    androidTestImplementation test.espressoRunner
 }

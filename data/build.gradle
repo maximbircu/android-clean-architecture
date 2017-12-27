@@ -1,18 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
-
-
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -21,14 +18,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(path: ':domain')
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    def android = rootProject.ext.androidDependences
+    def libraries = rootProject.ext.librariesDependeces
+    def test = rootProject.ext.testingDependeces
+
+    //android
+    implementation android.kotlin
+    implementation android.kotlinReflect
+    implementation android.appCompat
+
+    //libraries
+    compile libraries.retrofit
+    compile libraries.retrofitGson
+    compile libraries.retrofitAdapter
+    compile libraries.okhttp
+    compile libraries.okhttpInterceptor
+    implementation libraries.rxJava
+    implementation libraries.okhttp
+    implementation libraries.okhttpInterceptor
+    implementation libraries.dagger
+    kapt libraries.daggerCompiler
+
+    //test
+    testImplementation test.junit
+    androidTestImplementation test.espressoCore
+    androidTestImplementation test.espressoRunner
 }
