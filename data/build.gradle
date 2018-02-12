@@ -48,4 +48,8 @@ dependencies {
     testImplementation test.junit
     androidTestImplementation test.espressoCore
     androidTestImplementation test.espressoRunner
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }
 }

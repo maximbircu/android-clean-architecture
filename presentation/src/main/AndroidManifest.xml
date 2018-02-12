@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.architecture.clean.android_clean_architecture">
+    package="ml.maximbircu.android_clean_architecture">
 
     <application
-        android:name="com.architecture.clean.presentation.App"
+        android:name="ml.maximbircu.presentation.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.architecture.clean.presentation.ui.activities.SplashActivity"
+            android:name="ml.maximbircu.presentation.ui.activities.SplashActivity"
             android:theme="@style/SplashTheme">
 
             <intent-filter>

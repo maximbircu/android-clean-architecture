@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "723779087736",
+    "firebase_url": "https://clean-architecture-5f65e.firebaseio.com",
+    "project_id": "clean-architecture-5f65e",
+    "storage_bucket": "clean-architecture-5f65e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723779087736:android:7e53fbca93fc9807",
+        "android_client_info": {
+          "package_name": "maximbircu.ml"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723779087736-rdmduct4si17g9mp1ssgh47khgluheun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "maximbircu.ml",
+            "certificate_hash": "3e85c73b8a42cc4c94bf7ea2861007d58c51df8f"
+          }
+        },
+        {
+          "client_id": "723779087736-1qjl7143856kp4g8ilv8f366ub4l2kfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUowYVKRsP4tg6VWLqc0R4F3XHK2yD9gs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723779087736-1qjl7143856kp4g8ilv8f366ub4l2kfp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

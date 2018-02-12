@@ -1,3 +1,5 @@
 <resources>
-    <string name="client_api_endpoint">http://test.api.tennismate.co/api/</string>
+    <string name="client_api_endpoint"></string>
+    <string name="logcat_log_level"></string>
+    <string name="crashlytics_log_level"></string>
 </resources>

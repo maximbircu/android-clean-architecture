@@ -1,5 +1,6 @@
 ext {
     //Android
+    gradleVersion = "3.0.1"
     appCompatVersion = "26.1.0"
     constraintLayoutVersion = "1.0.2"
     observableScrollViewVersion = "1.6.0"
@@ -7,7 +8,9 @@ ext {
     picassoVersion = "2.5.2"
     circleIndicatorVersion = "1.2.2"
     kotlinVersion = "1.1.51"
-    googlePlayServicesVersion = "9.0.0"
+    googlePlayServicesVersion = "11.8.0"
+    firebaseVersion = "11.8.0"
+    googleServicesVersion = "3.1.0"
 
     //Libraries
     rxJavaVersion = '1.2.1'
@@ -40,7 +43,9 @@ ext {
             textDrawable        : "com.amulyakhare:com.amulyakhare.textdrawable:${textDrawableVersion}",
             picasso             : "com.squareup.picasso:picasso:${picassoVersion}",
             circleIndicator     : "me.relex:circleindicator:${circleIndicatorVersion}",
-            googlePlayServices  : "com.google.android.gms:play-services-auth:${googlePlayServicesVersion}"
+            googlePlayServices  : "com.google.android.gms:play-services-auth:${googlePlayServicesVersion}",
+            firebaseCore        : "com.google.firebase:firebase-core:${firebaseVersion}",
+            firebaseCrash       : "com.google.firebase:firebase-crash:${firebaseVersion}"
     ]
 
 
